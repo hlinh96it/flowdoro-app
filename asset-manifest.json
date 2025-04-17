@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/flowdoro-app/static/css/main.3276d033.css",
+    "main.js": "/flowdoro-app/static/js/main.061cad66.js",
+    "index.html": "/flowdoro-app/index.html",
+    "main.3276d033.css.map": "/flowdoro-app/static/css/main.3276d033.css.map",
+    "main.061cad66.js.map": "/flowdoro-app/static/js/main.061cad66.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3276d033.css",
+    "static/js/main.061cad66.js"
+  ]
+}
