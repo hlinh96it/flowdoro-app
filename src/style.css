@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Đảm bảo trang tràn viền */
+html, body, #root, .App {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Đảm bảo không có khoảng trắng ở viền ngoài */
+body {
+  overflow-x: hidden;
+}
+
+/* Định nghĩa các lớp màu cho sidebar minimal */
+.sidebar-minimal {
+  @apply bg-neutral-50 text-neutral-700 border-r border-neutral-200;
+}
+
+.sidebar-item-hover {
+  @apply hover:bg-neutral-100 hover:text-primary-700 transition-colors duration-200;
+}
+
+.sidebar-item-active {
+  @apply bg-primary-50 text-primary-700 border-l-2 border-primary-500;
+}
+
+.sidebar-button {
+  @apply bg-primary-50 hover:bg-primary-100 text-primary-700 transition-colors duration-200;
+}
+
+/* Theme styles */
+.theme-dark {
+  @apply bg-neutral-900 text-white;
+}
+
+.theme-dark .sidebar-minimal {
+  @apply bg-neutral-800 text-neutral-100 border-neutral-700;
+}
+
+.theme-dark .sidebar-item-hover {
+  @apply hover:bg-neutral-700;
+}
+
+.theme-dark .sidebar-item-active {
+  @apply bg-neutral-700 border-primary-400;
+}
+
+.theme-dark .sidebar-button {
+  @apply bg-neutral-700 hover:bg-neutral-600 text-neutral-100;
+}
+
+/* Các lớp tiện ích cho theme */
+.dark-card {
+  @apply bg-neutral-800 border-neutral-700 text-white;
+}
+
+.dark-input {
+  @apply bg-neutral-700 border-neutral-600 text-white placeholder-neutral-400;
+}
+
+.dark-button {
+  @apply bg-neutral-700 hover:bg-neutral-600 text-white;
+}
