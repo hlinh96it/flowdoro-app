@@ -19,6 +19,18 @@ export const Sidebar = ({ activeProject, setActiveProject, currentTheme }) => {
     }
   };
 
+  // Thêm hàm xóa project
+  const deleteProject = (index) => {
+    const updatedProjects = [...projects];
+    updatedProjects.splice(index, 1);
+    setProjects(updatedProjects);
+    
+    // Nếu project đang active bị xóa, chuyển sang project đầu tiên hoặc null
+    if (activeProject === projects[index].name) {
+      setActiveProject(updatedProjects.length > 0 ? updatedProjects[0].name : null);
+    }
+  };
+
   // Xác định các lớp dựa trên theme
   const isDarkTheme = currentTheme === "dark";
   const sidebarClass = isDarkTheme 
@@ -53,11 +65,23 @@ export const Sidebar = ({ activeProject, setActiveProject, currentTheme }) => {
           {projects.map((project, index) => (
             <div 
               key={index}
-              className={`flex items-center p-2 rounded-lg transition cursor-pointer ${activeProject === project.name ? itemActiveClass : itemHoverClass}`}
+              className={`group flex items-center p-2 rounded-lg transition cursor-pointer ${activeProject === project.name ? itemActiveClass : itemHoverClass}`}
               onClick={() => setActiveProject(project.name)}
             >
               <div className={`w-3 h-3 rounded-full ${project.color} mr-3`}></div>
-              <span>{project.name}</span>
+              <span className="flex-grow">{project.name}</span>
+              {/* Nút xóa project - hiển thị khi hover */}
+              <button 
+                className="opacity-0 group-hover:opacity-70 hover:opacity-100 transition ml-2 text-red-500"
+                onClick={(e) => {
+                  e.stopPropagation(); // Ngăn không cho kích hoạt sự kiện onClick của div cha
+                  deleteProject(index);
+                }}
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
             </div>
           ))}
           
@@ -85,21 +109,7 @@ export const Sidebar = ({ activeProject, setActiveProject, currentTheme }) => {
             </div>
           </div>
         </div>
-        
-        <button 
-          className={`mt-4 flex items-center text-sm py-2 px-3 rounded-lg ${buttonClass}`}
-          onClick={() => {
-            setNewCategory("New Project");
-            setTimeout(() => {
-              const input = document.querySelector('input[placeholder="Add custom category..."]');
-              if (input) {
-                input.focus();
-                input.select();
-              }
-            }, 100);
-          }}
-        >
-        </button>
+
       </div>
       
       <div className="mb-8">
