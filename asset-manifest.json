@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/flowdoro-app/static/css/main.6c9610ea.css",
-    "main.js": "/flowdoro-app/static/js/main.88eea8f4.js",
+    "main.js": "/flowdoro-app/static/js/main.0a9b64fc.js",
     "index.html": "/flowdoro-app/index.html",
     "main.6c9610ea.css.map": "/flowdoro-app/static/css/main.6c9610ea.css.map",
-    "main.88eea8f4.js.map": "/flowdoro-app/static/js/main.88eea8f4.js.map"
+    "main.0a9b64fc.js.map": "/flowdoro-app/static/js/main.0a9b64fc.js.map"
   },
   "entrypoints": [
     "static/css/main.6c9610ea.css",
-    "static/js/main.88eea8f4.js"
+    "static/js/main.0a9b64fc.js"
   ]
 }
