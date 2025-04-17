@@ -67,7 +67,7 @@ export const Sidebar = ({ activeProject, setActiveProject, currentTheme }) => {
                 <div className="w-3 h-3 rounded-full bg-purple-400 mr-3"></div>
                 <input 
                   type="text" 
-                  placeholder="Add custom category..." 
+                  placeholder="Add projects" 
                   className={`w-full py-1 ${inputClass}`}
                   value={newCategory}
                   onChange={(e) => setNewCategory(e.target.value)}
@@ -99,10 +99,6 @@ export const Sidebar = ({ activeProject, setActiveProject, currentTheme }) => {
             }, 100);
           }}
         >
-          <svg className="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          Add New Project
         </button>
       </div>
       
